@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(flutter pub get:*)",
+      "Bash(flutter analyze:*)",
+      "Bash(flutter test)",
+      "Bash(flutter doctor:*)",
+      "Bash(flutter build:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
