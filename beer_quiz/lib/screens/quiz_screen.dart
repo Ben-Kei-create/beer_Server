@@ -103,8 +103,12 @@ class _QuizScreenState extends State<QuizScreen> {
     final currentQuestion = _questions[_currentQuestionIndex];
     final isCorrect = answerIndex == currentQuestion.correctAnswerIndex;
 
+    // Add haptic feedback
     if (isCorrect) {
       _correctAnswers++;
+      HapticFeedback.lightImpact(); // Light vibration for correct answer
+    } else {
+      HapticFeedback.vibrate(); // Stronger vibration for incorrect answer
     }
 
     _triviaList.add(currentQuestion.trivia);
