@@ -48,7 +48,7 @@
 	<key>NSUserTrackingUsageDescription</key>
 	<string>次画面で『許可』をタップしていただくことで、お客様の興味に合わせたビールの新製品情報やお得な広告をお届けできるようになります</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-4859622277330192~4732107297</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

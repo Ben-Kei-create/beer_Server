@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Request App Tracking Transparency permission (iOS 14+)
+  final status = await AppTrackingTransparency.trackingAuthorizationStatus;
+  if (status == TrackingStatus.notDetermined) {
+    await AppTrackingTransparency.requestTrackingAuthorization();
+  }
+  
+  // Initialize AdMob
   await MobileAds.instance.initialize();
+  
   runApp(const MyApp());
 }
 

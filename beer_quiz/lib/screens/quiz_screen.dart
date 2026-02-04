@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../models/quiz_question.dart';
 import '../models/quiz_result.dart';
@@ -45,8 +46,13 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _loadBannerAd() {
+    // Use test ad ID in debug mode, production ID in release mode
+    final adUnitId = kDebugMode
+        ? 'ca-app-pub-3940256099942544/2934735716' // Test banner ad ID
+        : 'ca-app-pub-4859622277330192/3079387929'; // Production banner ad ID
+    
     _bannerAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544/2934735716', // Test banner ad unit ID
+      adUnitId: adUnitId,
       size: AdSize.banner,
       request: const AdRequest(),
       listener: BannerAdListener(
