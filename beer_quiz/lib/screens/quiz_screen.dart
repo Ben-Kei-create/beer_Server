@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../models/quiz_question.dart';
 import '../models/quiz_result.dart';
 import 'result_screen.dart';
@@ -24,17 +25,42 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _isLoading = true;
   int? _selectedAnswerIndex;
   bool _hasAnswered = false;
+  
+  // AdMob Banner Ad
+  BannerAd? _bannerAd;
+  bool _isBannerAdLoaded = false;
 
   @override
   void initState() {
     super.initState();
     _loadQuestions();
+    _loadBannerAd();
   }
 
   @override
   void dispose() {
     _timer?.cancel();
+    _bannerAd?.dispose();
     super.dispose();
+  }
+
+  void _loadBannerAd() {
+    _bannerAd = BannerAd(
+      adUnitId: 'ca-app-pub-3940256099942544/2934735716', // Test banner ad unit ID
+      size: AdSize.banner,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _isBannerAdLoaded = true;
+          });
+        },
+        onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        },
+      ),
+    );
+    _bannerAd?.load();
   }
 
   Future<void> _loadQuestions() async {
@@ -280,6 +306,14 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   ),
                 ),
+                // Banner Ad at the bottom
+                if (_isBannerAdLoaded && _bannerAd != null)
+                  Container(
+                    margin: const EdgeInsets.only(top: 16),
+                    width: _bannerAd!.size.width.toDouble(),
+                    height: _bannerAd!.size.height.toDouble(),
+                    child: AdWidget(ad: _bannerAd!),
+                  ),
               ],
             ),
           ),

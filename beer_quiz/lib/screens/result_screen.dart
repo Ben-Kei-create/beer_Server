@@ -1,11 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../models/quiz_result.dart';
 import 'quiz_screen.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
   final QuizResult result;
 
   const ResultScreen({super.key, required this.result});
+
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
+  InterstitialAd? _interstitialAd;
+  bool _isInterstitialAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadInterstitialAd();
+  }
+
+  @override
+  void dispose() {
+    _interstitialAd?.dispose();
+    super.dispose();
+  }
+
+  void _loadInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/4411468910', // Test interstitial ad unit ID
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          _interstitialAd = ad;
+          _isInterstitialAdLoaded = true;
+          _showInterstitialAd();
+        },
+        onAdFailedToLoad: (error) {
+          // Ad failed to load, continue without showing ad
+        },
+      ),
+    );
+  }
+
+  void _showInterstitialAd() {
+    if (_isInterstitialAdLoaded && _interstitialAd != null) {
+      _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+        onAdDismissedFullScreenContent: (ad) {
+          ad.dispose();
+        },
+        onAdFailedToShowFullScreenContent: (ad, error) {
+          ad.dispose();
+        },
+      );
+      _interstitialAd!.show();
+      _interstitialAd = null;
+      _isInterstitialAdLoaded = false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +98,7 @@ class ResultScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          result.message,
+                          widget.result.message,
                           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Theme.of(context).colorScheme.primary,
@@ -59,7 +113,7 @@ class ResultScreen extends StatelessWidget {
                           textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(
-                              '${result.correctAnswers}',
+                              '${widget.result.correctAnswers}',
                               style: TextStyle(
                                 fontSize: 48,
                                 fontWeight: FontWeight.bold,
@@ -67,7 +121,7 @@ class ResultScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              ' / ${result.totalQuestions}',
+                              ' / ${widget.result.totalQuestions}',
                               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                                     color: Colors.grey[600],
                                   ),
@@ -76,7 +130,7 @@ class ResultScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          '正解率: ${result.scorePercentage.toStringAsFixed(0)}%',
+                          '正解率: ${widget.result.scorePercentage.toStringAsFixed(0)}%',
                           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 color: Colors.grey[700],
                               ),
@@ -118,7 +172,7 @@ class ResultScreen extends StatelessWidget {
                               const SizedBox(width: 8),
                               Flexible(
                                 child: Text(
-                                  result.title,
+                                  widget.result.title,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -136,7 +190,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 // Trivia section
-                if (result.triviaList.isNotEmpty) ...[
+                if (widget.result.triviaList.isNotEmpty) ...[
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -148,7 +202,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  ...result.triviaList.asMap().entries.map(
+                  ...widget.result.triviaList.asMap().entries.map(
                         (entry) => Padding(
                           padding: const EdgeInsets.only(bottom: 16.0),
                           child: Card(
