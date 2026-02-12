@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:share_plus/share_plus.dart';
 import '../models/quiz_result.dart';
 import 'quiz_screen.dart';
 
@@ -15,17 +17,37 @@ class ResultScreen extends StatefulWidget {
 class _ResultScreenState extends State<ResultScreen> {
   InterstitialAd? _interstitialAd;
   bool _isInterstitialAdLoaded = false;
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
     _loadInterstitialAd();
+    _playResultSound();
   }
 
   @override
   void dispose() {
     _interstitialAd?.dispose();
+    _audioPlayer.dispose();
     super.dispose();
+  }
+
+  Future<void> _playResultSound() async {
+    try {
+      await _audioPlayer.play(AssetSource('sounds/result.mp3'));
+    } catch (e) {
+      // Sound file not found or playback error - continue silently
+    }
+  }
+
+  void _shareResult() {
+    final score = widget.result.correctAnswers;
+    final total = widget.result.totalQuestions;
+    final percentage = widget.result.scorePercentage.toStringAsFixed(0);
+    final text =
+        'ビール雑学クイズで【$score/$total問正解（$percentage%）】を取りました！ #BeerQuiz #ビール';
+    SharePlus.instance.share(ShareParams(text: text));
   }
 
   void _loadInterstitialAd() {
@@ -243,6 +265,24 @@ class _ResultScreenState extends State<ResultScreen> {
                       ),
                   const SizedBox(height: 32),
                 ],
+                // Share button
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: _shareResult,
+                    icon: const Icon(Icons.share),
+                    label: const Text('結果をシェアする'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
                 // Buttons
                 Row(
                   children: [

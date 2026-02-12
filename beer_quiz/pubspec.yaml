@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_mobile_ads: ^5.2.0
   app_tracking_transparency: ^2.0.5
+  share_plus: ^10.1.4
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/data/beer_quiz.json
+    - assets/sounds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:audioplayers/audioplayers.dart';
 import '../models/quiz_question.dart';
 import '../models/quiz_result.dart';
 import 'result_screen.dart';
@@ -27,6 +28,9 @@ class _QuizScreenState extends State<QuizScreen> {
   int? _selectedAnswerIndex;
   bool _hasAnswered = false;
   
+  // Sound effects
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
   // AdMob Banner Ad
   BannerAd? _bannerAd;
   bool _isBannerAdLoaded = false;
@@ -42,7 +46,16 @@ class _QuizScreenState extends State<QuizScreen> {
   void dispose() {
     _timer?.cancel();
     _bannerAd?.dispose();
+    _audioPlayer.dispose();
     super.dispose();
+  }
+
+  Future<void> _playSound(String fileName) async {
+    try {
+      await _audioPlayer.play(AssetSource('sounds/$fileName'));
+    } catch (e) {
+      // Sound file not found or playback error - continue silently
+    }
   }
 
   void _loadBannerAd() {
@@ -135,12 +148,14 @@ class _QuizScreenState extends State<QuizScreen> {
     final currentQuestion = _questions[_currentQuestionIndex];
     final isCorrect = answerIndex == currentQuestion.correctAnswerIndex;
 
-    // Add haptic feedback
+    // Add haptic feedback and sound effects
     if (isCorrect) {
       _correctAnswers++;
       HapticFeedback.lightImpact(); // Light vibration for correct answer
+      _playSound('correct.mp3');
     } else {
       HapticFeedback.vibrate(); // Stronger vibration for incorrect answer
+      _playSound('wrong.mp3');
     }
 
     _triviaList.add(currentQuestion.trivia);
