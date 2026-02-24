@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../models/quiz_result.dart';
 import 'quiz_screen.dart';
 
@@ -13,54 +12,6 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  InterstitialAd? _interstitialAd;
-  bool _isInterstitialAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadInterstitialAd();
-  }
-
-  @override
-  void dispose() {
-    _interstitialAd?.dispose();
-    super.dispose();
-  }
-
-  void _loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/4411468910', // Test interstitial ad unit ID
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) {
-          _interstitialAd = ad;
-          _isInterstitialAdLoaded = true;
-          _showInterstitialAd();
-        },
-        onAdFailedToLoad: (error) {
-          // Ad failed to load, continue without showing ad
-        },
-      ),
-    );
-  }
-
-  void _showInterstitialAd() {
-    if (_isInterstitialAdLoaded && _interstitialAd != null) {
-      _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-        onAdDismissedFullScreenContent: (ad) {
-          ad.dispose();
-        },
-        onAdFailedToShowFullScreenContent: (ad, error) {
-          ad.dispose();
-        },
-      );
-      _interstitialAd!.show();
-      _interstitialAd = null;
-      _isInterstitialAdLoaded = false;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,14 +43,12 @@ class _ResultScreenState extends State<ResultScreen> {
                     padding: const EdgeInsets.all(32.0),
                     child: Column(
                       children: [
-                        const Text(
-                          '🍺',
-                          style: TextStyle(fontSize: 60),
-                        ),
+                        const Text('🍺', style: TextStyle(fontSize: 60)),
                         const SizedBox(height: 16),
                         Text(
                           widget.result.message,
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
@@ -122,18 +71,16 @@ class _ResultScreenState extends State<ResultScreen> {
                             ),
                             Text(
                               ' / ${widget.result.totalQuestions}',
-                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                    color: Colors.grey[600],
-                                  ),
+                              style: Theme.of(context).textTheme.headlineSmall
+                                  ?.copyWith(color: Colors.grey[600]),
                             ),
                           ],
                         ),
                         const SizedBox(height: 8),
                         Text(
                           '正解率: ${widget.result.scorePercentage.toStringAsFixed(0)}%',
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                color: Colors.grey[700],
-                              ),
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(color: Colors.grey[700]),
                         ),
                         const SizedBox(height: 24),
                         // Title badge
@@ -152,10 +99,9 @@ class _ResultScreenState extends State<ResultScreen> {
                             borderRadius: BorderRadius.circular(25),
                             boxShadow: [
                               BoxShadow(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .primary
-                                    .withValues(alpha: 0.3),
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.primary.withValues(alpha: 0.3),
                                 blurRadius: 8,
                                 spreadRadius: 2,
                               ),
@@ -196,51 +142,51 @@ class _ResultScreenState extends State<ResultScreen> {
                     child: Text(
                       '📚 豆知識',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
                   ...widget.result.triviaList.asMap().entries.map(
-                        (entry) => Padding(
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 32,
-                                    height: 32,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).colorScheme.primary,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '${entry.key + 1}',
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+                    (entry) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 32,
+                                height: 32,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '${entry.key + 1}',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(width: 16),
-                                  Expanded(
-                                    child: Text(
-                                      entry.value,
-                                      style: const TextStyle(fontSize: 15),
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Text(
+                                  entry.value,
+                                  style: const TextStyle(fontSize: 15),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
+                    ),
+                  ),
                   const SizedBox(height: 32),
                 ],
                 // Buttons
@@ -257,7 +203,9 @@ class _ResultScreenState extends State<ResultScreen> {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor: Theme.of(
+                            context,
+                          ).colorScheme.primary,
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                         ),
@@ -278,7 +226,9 @@ class _ResultScreenState extends State<ResultScreen> {
                           Navigator.popUntil(context, (route) => route.isFirst);
                         },
                         style: OutlinedButton.styleFrom(
-                          foregroundColor: Theme.of(context).colorScheme.primary,
+                          foregroundColor: Theme.of(
+                            context,
+                          ).colorScheme.primary,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           side: BorderSide(
                             color: Theme.of(context).colorScheme.primary,
