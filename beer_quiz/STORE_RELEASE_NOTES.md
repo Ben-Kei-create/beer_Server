@@ -37,15 +37,15 @@
 
 ## AdMob設定
 
-### テスト用App ID（現在の設定）
-- Android: `ca-app-pub-3940256099942544~3347511713`
-- iOS: `ca-app-pub-3940256099942544~1458002511`
+### 現在の設定
+- Android: `ca-app-pub-4859622277330192~4732107297`
+- iOS: `ca-app-pub-4859622277330192~4732107297`
 
 ### 本番リリース前に必要な作業
 1. Google AdMobコンソールでアプリを登録
-2. 実際のApp IDを取得
-3. AndroidManifest.xml と Info.plist を更新
-4. 広告ユニットIDも実際のものに置き換え
+2. Android / iOS のApp ID設定値が一致していることを確認
+3. iOS / Android の広告ユニットIDが本番値であることを確認
+4. ストア申請情報（App Privacy, Privacy Policy URL）を更新
 
 ## ストア説明文サンプル
 
@@ -87,6 +87,9 @@ flutter build appbundle --release
 flutter build apk --release
 ```
 
+`android/key.properties` が未設定の場合は release ビルドが失敗します。  
+テンプレート: `android/key.properties.example`
+
 ### iOS
 ```bash
 flutter build ios --release
@@ -105,7 +108,7 @@ flutter build macos --release
 
 ## 注意事項
 
-1. **広告表示**: 現在はAdMobの初期化のみ実装。実際の広告表示は別途実装が必要
+1. **広告表示**: クイズプレイ画面でバナー広告を表示（ホーム/結果画面では非表示）
 2. **プライバシーポリシー**: App Storeの審査には必須。別途作成すること
 3. **スクリーンショット**: 各プラットフォームのガイドラインに従って作成
 4. **アイコン**: ビールをイメージした魅力的なアイコンを作成
