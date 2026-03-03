@@ -1,4 +1,4 @@
-package com.example.beer_quiz
+package io.github.benkeicreate.beerquiz
 
 import io.flutter.embedding.android.FlutterActivity
 

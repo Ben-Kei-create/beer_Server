@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import '../models/quiz_question.dart';
 import '../models/quiz_result.dart';
 import 'result_screen.dart';
@@ -26,7 +27,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _isLoading = true;
   int? _selectedAnswerIndex;
   bool _hasAnswered = false;
-  
+
   // AdMob Banner Ad
   BannerAd? _bannerAd;
   bool _isBannerAdLoaded = false;
@@ -35,7 +36,7 @@ class _QuizScreenState extends State<QuizScreen> {
   void initState() {
     super.initState();
     _loadQuestions();
-    _loadBannerAd();
+    _prepareBannerAdForPlay();
   }
 
   @override
@@ -45,12 +46,40 @@ class _QuizScreenState extends State<QuizScreen> {
     super.dispose();
   }
 
+  Future<void> _prepareBannerAdForPlay() async {
+    if (kIsWeb) {
+      return;
+    }
+
+    final platform = defaultTargetPlatform;
+    if (platform != TargetPlatform.iOS && platform != TargetPlatform.android) {
+      return;
+    }
+
+    if (platform == TargetPlatform.iOS) {
+      try {
+        final status =
+            await AppTrackingTransparency.trackingAuthorizationStatus;
+        if (status == TrackingStatus.notDetermined) {
+          await AppTrackingTransparency.requestTrackingAuthorization();
+        }
+      } catch (_) {
+        // Continue loading non-personalized ads if ATT API is unavailable.
+      }
+    }
+
+    if (!mounted) {
+      return;
+    }
+    _loadBannerAd();
+  }
+
   void _loadBannerAd() {
     // Use test ad ID in debug mode, production ID in release mode
     final adUnitId = kDebugMode
         ? 'ca-app-pub-3940256099942544/2934735716' // Test banner ad ID
         : 'ca-app-pub-4859622277330192/3079387929'; // Production banner ad ID
-    
+
     _bannerAd = BannerAd(
       adUnitId: adUnitId,
       size: AdSize.banner,
@@ -71,12 +100,14 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Future<void> _loadQuestions() async {
     try {
-      final String jsonString =
-          await rootBundle.loadString('assets/data/beer_quiz.json');
+      final String jsonString = await rootBundle.loadString(
+        'assets/data/beer_quiz.json',
+      );
       final List<dynamic> jsonData = json.decode(jsonString);
 
-      final allQuestions =
-          jsonData.map((q) => QuizQuestion.fromJson(q)).toList();
+      final allQuestions = jsonData
+          .map((q) => QuizQuestion.fromJson(q))
+          .toList();
 
       // Randomly select 10 questions from all available questions
       final random = Random();
@@ -170,9 +201,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(
-        builder: (context) => ResultScreen(result: result),
-      ),
+      MaterialPageRoute(builder: (context) => ResultScreen(result: result)),
     );
   }
 
@@ -185,9 +214,7 @@ class _QuizScreenState extends State<QuizScreen> {
           backgroundColor: Theme.of(context).colorScheme.primary,
           foregroundColor: Colors.white,
         ),
-        body: const Center(
-          child: CircularProgressIndicator(),
-        ),
+        body: const Center(child: CircularProgressIndicator()),
       );
     }
 
@@ -202,11 +229,7 @@ class _QuizScreenState extends State<QuizScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.info_outline,
-                size: 80,
-                color: Colors.grey,
-              ),
+              const Icon(Icons.info_outline, size: 80, color: Colors.grey),
               const SizedBox(height: 24),
               Text(
                 'クイズがまだ準備されていません',
@@ -266,7 +289,9 @@ class _QuizScreenState extends State<QuizScreen> {
                     children: [
                       Icon(
                         Icons.timer,
-                        color: _timeRemaining <= 5 ? Colors.white : Colors.grey[700],
+                        color: _timeRemaining <= 5
+                            ? Colors.white
+                            : Colors.grey[700],
                       ),
                       const SizedBox(width: 8),
                       Text(
@@ -274,7 +299,9 @@ class _QuizScreenState extends State<QuizScreen> {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: _timeRemaining <= 5 ? Colors.white : Colors.grey[700],
+                          color: _timeRemaining <= 5
+                              ? Colors.white
+                              : Colors.grey[700],
                         ),
                       ),
                     ],
