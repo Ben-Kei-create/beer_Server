@@ -1,1 +1,17 @@
 .DS_Store
+**/.DS_Store
+
+# Xcode / Swift
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+*.ipa
+*.xcarchive
+BeerQuizSwift/build_artifacts/
+
+# Local signing / secrets
+**/key.properties
+*.mobileprovision
+*.p12

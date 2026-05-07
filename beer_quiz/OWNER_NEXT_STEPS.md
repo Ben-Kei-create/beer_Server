@@ -1,5 +1,7 @@
 # 申請前の次アクション（オーナー実施）
 
+> 旧Flutter / Android提出向けメモです。Swift版で申請する場合は `../BeerQuizSwift/SUBMISSION_READINESS.md` を正としてください。
+
 ## 1) GitHubでPRを作成
 
 以下のURLを開いてPR作成:
