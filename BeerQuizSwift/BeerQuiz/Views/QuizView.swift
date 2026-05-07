@@ -22,7 +22,10 @@ struct QuizView: View {
             if session.isComplete {
                 ResultView(session: session, restart: restart, close: { dismiss() })
             } else if let question = session.currentQuestion {
-                questionBody(question)
+                VStack(spacing: 0) {
+                    questionBody(question)
+                    AdBannerBar()
+                }
             } else {
                 UnavailableView(message: "表示できる問題がありません。")
             }
