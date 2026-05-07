@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A30D2F02B2F07CCAC3F7828 /* AnswerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */; };
+		1D45215EF4A6058F5E456AFF /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AEC841583F3B3897206F9 /* QuizView.swift */; };
+		25EC76C1B52188A173F11BD3 /* UnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B217B6023F483F1D1742A /* UnavailableView.swift */; };
+		53168F15B1855F7896C18164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */; };
+		621692E2366E0711EC47BEE8 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */; };
+		6BE9866D43FFE56F29DE13C3 /* BeerQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */; };
+		751900CDFD41C0995AEF66B0 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E4F700FE328FC97A70F3CD /* QuizSession.swift */; };
+		8FCE0B8E24439B4EB357D7BE /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A72FABF47FD0D6855CABAB /* ResultView.swift */; };
+		A5B18D7D900326B16819C170 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */; };
+		AA149C0A4E52C60A2EAAE6A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F5B30889700A8C7E00513 /* ContentView.swift */; };
+		ACCB30D056825666E1CD4287 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6725E1069148873B9B65266 /* Difficulty.swift */; };
+		B2804ADDDA08DE439A5B22EA /* beer_quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */; };
+		E7F4CD52CF115A459487A38E /* BeerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F89C396CB442A1095F64D /* BeerTheme.swift */; };
+		EDC7C948ECBBE66DB4486873 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF5FBABBEEEC7E87339D24 /* HomeView.swift */; };
+		F2A834373BAC646BD4348AB7 /* QuestionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C675AA64DACB3BF6E2A6824F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D22A90A1D53502C8EEE4357C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B19E046438E0F1A5B02EE37;
+			remoteInfo = BeerQuiz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		083C594EEF0DE6AD63591D0F /* BeerQuiz.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BeerQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		146AEC841583F3B3897206F9 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerQuizApp.swift; sourceTree = "<group>"; };
+		36FF5FBABBEEEC7E87339D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50E4F700FE328FC97A70F3CD /* QuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
+		6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BeerQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2F89C396CB442A1095F64D /* BeerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTheme.swift; sourceTree = "<group>"; };
+		77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
+		78A72FABF47FD0D6855CABAB /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepositoryTests.swift; sourceTree = "<group>"; };
+		8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRecord.swift; sourceTree = "<group>"; };
+		936F5B30889700A8C7E00513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beer_quiz.json; sourceTree = "<group>"; };
+		C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
+		C6725E1069148873B9B65266 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		CD4B217B6023F483F1D1742A /* UnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0609DEE3780C52C4FE24D56B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */,
+			);
+			name = Resources;
+			path = BeerQuiz/Resources;
+			sourceTree = "<group>";
+		};
+		1D25D646DEAB8D9097A03D43 /* BeerQuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */,
+			);
+			path = BeerQuizTests;
+			sourceTree = "<group>";
+		};
+		1F1078CE4FA0F53CCCF1F7D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */,
+				C6725E1069148873B9B65266 /* Difficulty.swift */,
+				77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */,
+				50E4F700FE328FC97A70F3CD /* QuizSession.swift */,
+			);
+			name = Models;
+			path = BeerQuiz/Models;
+			sourceTree = "<group>";
+		};
+		6BF2718CD632A39AB9A268B0 /* BeerQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */,
+			);
+			path = BeerQuiz;
+			sourceTree = "<group>";
+		};
+		720227153BE455C6F1AC99C2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */,
+			);
+			name = App;
+			path = BeerQuiz/App;
+			sourceTree = "<group>";
+		};
+		A61A23C7934322CE88246B8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */,
+			);
+			name = Services;
+			path = BeerQuiz/Services;
+			sourceTree = "<group>";
+		};
+		A8361B398237118138740F59 = {
+			isa = PBXGroup;
+			children = (
+				720227153BE455C6F1AC99C2 /* App */,
+				6BF2718CD632A39AB9A268B0 /* BeerQuiz */,
+				1D25D646DEAB8D9097A03D43 /* BeerQuizTests */,
+				1F1078CE4FA0F53CCCF1F7D4 /* Models */,
+				0609DEE3780C52C4FE24D56B /* Resources */,
+				A61A23C7934322CE88246B8A /* Services */,
+				EE888A3358C908D7C76F9F6B /* Views */,
+				DA7A1C0704277956292083D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA7A1C0704277956292083D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				083C594EEF0DE6AD63591D0F /* BeerQuiz.app */,
+				6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE888A3358C908D7C76F9F6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E2F89C396CB442A1095F64D /* BeerTheme.swift */,
+				936F5B30889700A8C7E00513 /* ContentView.swift */,
+				36FF5FBABBEEEC7E87339D24 /* HomeView.swift */,
+				146AEC841583F3B3897206F9 /* QuizView.swift */,
+				78A72FABF47FD0D6855CABAB /* ResultView.swift */,
+				CD4B217B6023F483F1D1742A /* UnavailableView.swift */,
+			);
+			name = Views;
+			path = BeerQuiz/Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B19E046438E0F1A5B02EE37 /* BeerQuiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A79A05A6171969A5E77F42C /* Build configuration list for PBXNativeTarget "BeerQuiz" */;
+			buildPhases = (
+				0B6824F479E9A423B439B3BC /* Sources */,
+				549BD565227BA4C61220BD5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeerQuiz;
+			packageProductDependencies = (
+			);
+			productName = BeerQuiz;
+			productReference = 083C594EEF0DE6AD63591D0F /* BeerQuiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6794C8D91634845ED53B9A2F /* BeerQuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3DE0122473E8E25F95FC57 /* Build configuration list for PBXNativeTarget "BeerQuizTests" */;
+			buildPhases = (
+				0F7609D67987A84DD5349490 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B7383CC7E562BEC418B82A7 /* PBXTargetDependency */,
+			);
+			name = BeerQuizTests;
+			packageProductDependencies = (
+			);
+			productName = BeerQuizTests;
+			productReference = 6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D22A90A1D53502C8EEE4357C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3B19E046438E0F1A5B02EE37 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					6794C8D91634845ED53B9A2F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5914FFD6839F56FB01ADF8D3 /* Build configuration list for PBXProject "BeerQuiz" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ja;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ja,
+			);
+			mainGroup = A8361B398237118138740F59;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B19E046438E0F1A5B02EE37 /* BeerQuiz */,
+				6794C8D91634845ED53B9A2F /* BeerQuizTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		549BD565227BA4C61220BD5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53168F15B1855F7896C18164 /* Assets.xcassets in Resources */,
+				B2804ADDDA08DE439A5B22EA /* beer_quiz.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B6824F479E9A423B439B3BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A30D2F02B2F07CCAC3F7828 /* AnswerRecord.swift in Sources */,
+				6BE9866D43FFE56F29DE13C3 /* BeerQuizApp.swift in Sources */,
+				E7F4CD52CF115A459487A38E /* BeerTheme.swift in Sources */,
+				AA149C0A4E52C60A2EAAE6A9 /* ContentView.swift in Sources */,
+				ACCB30D056825666E1CD4287 /* Difficulty.swift in Sources */,
+				EDC7C948ECBBE66DB4486873 /* HomeView.swift in Sources */,
+				621692E2366E0711EC47BEE8 /* QuestionRepository.swift in Sources */,
+				A5B18D7D900326B16819C170 /* QuizQuestion.swift in Sources */,
+				751900CDFD41C0995AEF66B0 /* QuizSession.swift in Sources */,
+				1D45215EF4A6058F5E456AFF /* QuizView.swift in Sources */,
+				8FCE0B8E24439B4EB357D7BE /* ResultView.swift in Sources */,
+				25EC76C1B52188A173F11BD3 /* UnavailableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F7609D67987A84DD5349490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2A834373BAC646BD4348AB7 /* QuestionRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B7383CC7E562BEC418B82A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B19E046438E0F1A5B02EE37 /* BeerQuiz */;
+			targetProxy = C675AA64DACB3BF6E2A6824F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56EBB8DD1BA8EC0C7876A2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		65EB95963D3447A909F94BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = BeerQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.benkeicreate.beerquiz;
+				PRODUCT_MODULE_NAME = BeerQuiz;
+				PRODUCT_NAME = BeerQuiz;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		720AE151A7E2A35E15478314 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = BeerQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.benkeicreate.beerquiz;
+				PRODUCT_MODULE_NAME = BeerQuiz;
+				PRODUCT_NAME = BeerQuiz;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93D75DB42A89887A4247B0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.benkeicreate.beerquiz.tests;
+				PRODUCT_NAME = BeerQuizTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeerQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BeerQuiz";
+			};
+			name = Release;
+		};
+		F5D94EC74754D6C5B5EB7EF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.benkeicreate.beerquiz.tests;
+				PRODUCT_NAME = BeerQuizTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeerQuiz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BeerQuiz";
+			};
+			name = Debug;
+		};
+		FBA2BF3758B0FFE96874F38A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5914FFD6839F56FB01ADF8D3 /* Build configuration list for PBXProject "BeerQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56EBB8DD1BA8EC0C7876A2FA /* Debug */,
+				FBA2BF3758B0FFE96874F38A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A79A05A6171969A5E77F42C /* Build configuration list for PBXNativeTarget "BeerQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65EB95963D3447A909F94BD8 /* Debug */,
+				720AE151A7E2A35E15478314 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6D3DE0122473E8E25F95FC57 /* Build configuration list for PBXNativeTarget "BeerQuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5D94EC74754D6C5B5EB7EF9 /* Debug */,
+				93D75DB42A89887A4247B0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D22A90A1D53502C8EEE4357C /* Project object */;
+}

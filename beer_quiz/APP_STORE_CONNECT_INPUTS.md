@@ -1,5 +1,7 @@
 # App Store Connect 入力メモ
 
+> 旧Flutter版向けメモです。Swift版で申請する場合は `../BeerQuizSwift/SUBMISSION_READINESS.md` を正としてください。
+
 ## App Information
 - Name: ビール雑学クイズ
 - Bundle ID: `io.github.benkeicreate.beerquiz`
