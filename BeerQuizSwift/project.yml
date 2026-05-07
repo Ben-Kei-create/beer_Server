@@ -11,6 +11,10 @@ settings:
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
     MARKETING_VERSION: 1.0.0
     SWIFT_VERSION: 5.0
+packages:
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads.git
+    from: 13.3.0
 targets:
   BeerQuiz:
     type: application
@@ -31,6 +35,9 @@ targets:
         PRODUCT_MODULE_NAME: BeerQuiz
         PRODUCT_NAME: BeerQuiz
         TARGETED_DEVICE_FAMILY: "1,2"
+    dependencies:
+      - package: GoogleMobileAds
+        product: GoogleMobileAds
   BeerQuizTests:
     type: bundle.unit-test
     platform: iOS

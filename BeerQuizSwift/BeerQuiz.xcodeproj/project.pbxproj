@@ -10,6 +10,8 @@
 		1A30D2F02B2F07CCAC3F7828 /* AnswerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */; };
 		1D45215EF4A6058F5E456AFF /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146AEC841583F3B3897206F9 /* QuizView.swift */; };
 		25EC76C1B52188A173F11BD3 /* UnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4B217B6023F483F1D1742A /* UnavailableView.swift */; };
+		28F82B945D0465F71DB4C0FD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 07418296138D7108D9CDCFA0 /* GoogleMobileAds */; };
+		50AE1D3846E1B20F55EBF9ED /* AdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C83C20EF599C2002B6BA0 /* AdBannerView.swift */; };
 		53168F15B1855F7896C18164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */; };
 		621692E2366E0711EC47BEE8 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */; };
 		6BE9866D43FFE56F29DE13C3 /* BeerQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */; };
@@ -39,6 +41,7 @@
 		146AEC841583F3B3897206F9 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerQuizApp.swift; sourceTree = "<group>"; };
 		36FF5FBABBEEEC7E87339D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3B0C83C20EF599C2002B6BA0 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E4F700FE328FC97A70F3CD /* QuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
 		6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BeerQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +56,17 @@
 		C6725E1069148873B9B65266 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		CD4B217B6023F483F1D1742A /* UnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E9E17C6C6A50BC50DD098B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F82B945D0465F71DB4C0FD /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0609DEE3780C52C4FE24D56B /* Resources */ = {
@@ -136,6 +150,7 @@
 		EE888A3358C908D7C76F9F6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B0C83C20EF599C2002B6BA0 /* AdBannerView.swift */,
 				6E2F89C396CB442A1095F64D /* BeerTheme.swift */,
 				936F5B30889700A8C7E00513 /* ContentView.swift */,
 				36FF5FBABBEEEC7E87339D24 /* HomeView.swift */,
@@ -156,6 +171,7 @@
 			buildPhases = (
 				0B6824F479E9A423B439B3BC /* Sources */,
 				549BD565227BA4C61220BD5F /* Resources */,
+				1E9E17C6C6A50BC50DD098B5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +179,7 @@
 			);
 			name = BeerQuiz;
 			packageProductDependencies = (
+				07418296138D7108D9CDCFA0 /* GoogleMobileAds */,
 			);
 			productName = BeerQuiz;
 			productReference = 083C594EEF0DE6AD63591D0F /* BeerQuiz.app */;
@@ -215,6 +232,9 @@
 			);
 			mainGroup = A8361B398237118138740F59;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D5B0B9D89431EB7F6F79F7A7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AE1D3846E1B20F55EBF9ED /* AdBannerView.swift in Sources */,
 				1A30D2F02B2F07CCAC3F7828 /* AnswerRecord.swift in Sources */,
 				6BE9866D43FFE56F29DE13C3 /* BeerQuizApp.swift in Sources */,
 				E7F4CD52CF115A459487A38E /* BeerTheme.swift in Sources */,
@@ -510,6 +531,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D5B0B9D89431EB7F6F79F7A7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07418296138D7108D9CDCFA0 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5B0B9D89431EB7F6F79F7A7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D22A90A1D53502C8EEE4357C /* Project object */;
 }

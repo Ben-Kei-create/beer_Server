@@ -10,8 +10,9 @@
 - Build: `1`
 - 最低対応OS: iOS 17.0
 - 対応端末: iPhone / iPad
-- 広告SDK: なし
-- ATT: 不要
+- 広告SDK: Google Mobile Ads SDK
+- 広告表示: クイズ画面下部にAdMobバナー
+- ATT: パーソナライズ広告を使う場合は要確認
 - サーバー通信: なし
 - 問題データ: アプリ内JSONに75問同梱
 
@@ -21,12 +22,16 @@
 - カテゴリ候補: 教育 / トリビアゲーム
 - Privacy Policy URL: `https://ben-kei-create.github.io/beer_Server/privacy-policy.html`
 - Support URL: `https://ben-kei-create.github.io/beer_Server/support.html`
-- App Privacy: データ収集なし
+- App Privacy: AdMob利用分を反映して回答
 - 年齢制限: アルコール関連コンテンツありとして回答
 
 ## 申請前に人の手で必要なもの
 
 - Apple Developer Team IDをXcodeのSigningに設定
+- AdMob本番アプリID / 広告ユニットIDが最新であることを確認
+- App Store ConnectのApp Privacy回答をAdMob利用分に合わせて更新
+- EEA/UKへ配信する場合は、Google UMP同意メッセージをAdMob管理画面で設定し、必要に応じてアプリ側にも同意導線を追加
+- パーソナライズ広告でIDFAを利用する場合は、ATT説明文と許可リクエスト導線を追加
 - 実機またはTestFlightで最終操作確認
 - App Store用スクリーンショットの作成
 - App Store Connectで年齢制限、カテゴリ、価格、配信地域を入力

@@ -26,8 +26,8 @@
   - 問題ごとの制限時間
   - スコア結果表示
 - 広告連携:
-  - 現行Swift版は広告SDKなし
-  - ATT許可リクエストなし
+  - Google AdMobバナー広告
+  - DebugはGoogle公式テスト広告ID、Releaseは本番広告ユニットIDを使用
 
 ## 開発環境
 
@@ -54,5 +54,5 @@ xcodebuild -scheme BeerQuiz -configuration Release -destination 'generic/platfor
 ## 注意事項
 
 - App Store申請前にApple Developer Team IDをXcodeのSigningへ設定してください。
-- Swift版で広告SDKを追加する場合は、プライバシーポリシーとApp Privacy回答を再更新してください。
+- AdMobの本番配信前に、App Store ConnectのApp Privacy回答をAdMob利用分に合わせて更新してください。
 - プライバシーポリシー更新時は`privacy-policy.html`と`index.html`を同時更新してください。

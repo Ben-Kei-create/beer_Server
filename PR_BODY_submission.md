@@ -1,6 +1,7 @@
 ## Summary
 - added a native SwiftUI App Store submission target under `BeerQuizSwift/`
 - redesigned the SwiftUI screens with a bright beer-inspired theme, frothy panels, and floating pop icons
+- added a quiz-screen AdMob banner using test ads in Debug and the configured production unit in Release
 - bundled the 75-question beer quiz JSON into the Swift app
 - added Swift unit tests for question data validation and quiz scoring
 - updated privacy/support pages for the current no-ads, no-tracking Swift release

@@ -16,6 +16,11 @@ xcodegen generate
 xcodebuild test -scheme BeerQuiz -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.4.1'
 ```
 
-## リリース方針
+## 広告
 
-初回Swift版は広告SDKなし、ログインなし、サーバー通信なしのオフラインクイズとして構成しています。App Store ConnectのApp Privacyは、このSwift版に合わせて「データ収集なし」で回答する想定です。
+クイズ画面の下部にAdMobバナー広告を表示します。
+
+- Debug: Google公式テスト広告ユニット
+- Release: `ca-app-pub-4859622277330192/3079387929`
+
+App Store提出前に、App Store ConnectのApp Privacy回答をAdMob利用分に合わせて更新してください。パーソナライズ広告やEEA/UK配信を行う場合は、UMP/ATT同意導線も別途確認してください。
