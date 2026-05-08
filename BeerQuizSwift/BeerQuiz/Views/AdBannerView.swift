@@ -12,7 +12,7 @@ enum AdMobConfiguration {
 }
 
 struct AdBannerBar: View {
-    private let adSize = adSizeFor(cgSize: CGSize(width: 320, height: 50))
+    private let adSize = AdSizeBanner
 
     var body: some View {
         HStack {
