@@ -22,10 +22,7 @@ struct QuizView: View {
             if session.isComplete {
                 ResultView(session: session, restart: restart, close: { dismiss() })
             } else if let question = session.currentQuestion {
-                VStack(spacing: 0) {
-                    AdBannerBar()
-                    questionBody(question)
-                }
+                questionBody(question)
             } else {
                 UnavailableView(message: "表示できる問題がありません。")
             }
@@ -35,7 +32,12 @@ struct QuizView: View {
                 AdBannerBar()
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+        if !session.isComplete, session.currentQuestion != nil {
+            AdBannerBar()
+        }
+    }
+    .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 if !session.isComplete, session.currentQuestion != nil {

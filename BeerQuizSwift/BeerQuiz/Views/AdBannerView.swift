@@ -24,7 +24,6 @@ struct AdBannerBar: View {
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: adSize.size.height + 8)
         .background(Color.black.opacity(0.08))
     }
 }
