@@ -32,11 +32,6 @@ struct QuizView: View {
                 AdBannerBar()
             }
         }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-        if !session.isComplete, session.currentQuestion != nil {
-            AdBannerBar()
-        }
-    }
     .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
