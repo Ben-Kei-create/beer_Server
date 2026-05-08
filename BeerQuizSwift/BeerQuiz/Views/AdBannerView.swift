@@ -5,39 +5,27 @@ enum AdMobConfiguration {
     static let appID = "ca-app-pub-4859622277330192~4732107297"
 
     #if DEBUG
-    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2435281174"
+    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
     #else
     static let bannerAdUnitID = "ca-app-pub-4859622277330192/3079387929"
     #endif
 }
 
 struct AdBannerBar: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let availableWidth = max(proxy.size.width - 32, 320)
-            let adSize = largeAnchoredAdaptiveBanner(width: availableWidth)
+    private let adSize = adSizeFor(cgSize: CGSize(width: 320, height: 50))
 
-            HStack {
-                Spacer(minLength: 0)
-                BannerViewContainer(adSize: adSize)
-                    .frame(width: adSize.size.width, height: adSize.size.height)
-                    .accessibilityIdentifier("quiz_banner_ad")
-                Spacer(minLength: 0)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .fill(.ultraThinMaterial)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .stroke(Color.white.opacity(0.48), lineWidth: 1)
-                    }
-            }
-            .padding(.horizontal, 12)
-            .padding(.top, 8)
-            .padding(.bottom, 10)
+    var body: some View {
+        HStack {
+            Spacer(minLength: 0)
+            BannerViewContainer(adSize: adSize)
+                .frame(width: adSize.size.width, height: adSize.size.height)
+                .clipped()
+                .accessibilityIdentifier("quiz_banner_ad")
+            Spacer(minLength: 0)
         }
-        .frame(height: 96)
+        .frame(maxWidth: .infinity)
+        .frame(height: adSize.size.height + 8)
+        .background(Color.black.opacity(0.08))
     }
 }
 
