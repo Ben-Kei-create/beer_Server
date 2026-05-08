@@ -22,12 +22,14 @@ struct QuizView: View {
             if session.isComplete {
                 ResultView(session: session, restart: restart, close: { dismiss() })
             } else if let question = session.currentQuestion {
-                VStack(spacing: 0) {
-                    questionBody(question)
-                    AdBannerBar()
-                }
+                questionBody(question)
             } else {
                 UnavailableView(message: "表示できる問題がありません。")
+            }
+        }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if !session.isComplete, session.currentQuestion != nil {
+                AdBannerBar()
             }
         }
         .navigationBarTitleDisplayMode(.inline)
