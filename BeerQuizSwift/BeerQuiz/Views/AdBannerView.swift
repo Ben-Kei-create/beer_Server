@@ -1,3 +1,4 @@
+
 import GoogleMobileAds
 import SwiftUI
 
@@ -5,67 +6,58 @@ enum AdMobConfiguration {
     static let appID = "ca-app-pub-4859622277330192~4732107297"
 
     #if DEBUG
-    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2435281174"
+    static let bannerAdUnitID = "ca-app-pub-3940256099942544/2934735716"
     #else
     static let bannerAdUnitID = "ca-app-pub-4859622277330192/3079387929"
     #endif
 }
 
 struct AdBannerBar: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let availableWidth = max(proxy.size.width - 32, 320)
-            let adSize = largeAnchoredAdaptiveBanner(width: availableWidth)
+    @State private var adHeight: CGFloat = 50
 
-            HStack {
-                Spacer(minLength: 0)
-                BannerViewContainer(adSize: adSize)
-                    .frame(width: adSize.size.width, height: adSize.size.height)
-                    .accessibilityIdentifier("quiz_banner_ad")
-                Spacer(minLength: 0)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .fill(.ultraThinMaterial)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .stroke(Color.white.opacity(0.48), lineWidth: 1)
-                    }
-            }
-            .padding(.horizontal, 12)
-            .padding(.top, 8)
-            .padding(.bottom, 10)
+    var body: some View {
+        HStack {
+            Spacer(minLength: 0)
+            BannerViewContainer(onHeightChange: { height in
+                adHeight = height
+            })
+            .frame(height: adHeight)
+            .accessibilityIdentifier("quiz_banner_ad")
+            Spacer(minLength: 0)
         }
-        .frame(height: 96)
+        .frame(maxWidth: .infinity)
+        .background(Color.black.opacity(0.08))
     }
 }
 
 private struct BannerViewContainer: UIViewRepresentable {
-    let adSize: AdSize
+    let onHeightChange: (CGFloat) -> Void
 
     func makeUIView(context: Context) -> BannerView {
-        let banner = BannerView(adSize: adSize)
+        let banner = BannerView(adSize: AdSizeBanner)
         banner.adUnitID = AdMobConfiguration.bannerAdUnitID
         banner.delegate = context.coordinator
         banner.load(Request())
         return banner
     }
 
-    func updateUIView(_ banner: BannerView, context: Context) {
-        guard banner.adSize.size != adSize.size else {
-            return
-        }
-
-        banner.adSize = adSize
-        banner.load(Request())
-    }
+    func updateUIView(_ banner: BannerView, context: Context) {}
 
     func makeCoordinator() -> BannerCoordinator {
-        BannerCoordinator()
+        BannerCoordinator(onHeightChange: onHeightChange)
     }
 
     final class BannerCoordinator: NSObject, BannerViewDelegate {
+        let onHeightChange: (CGFloat) -> Void
+
+        init(onHeightChange: @escaping (CGFloat) -> Void) {
+            self.onHeightChange = onHeightChange
+        }
+
+        func bannerViewDidReceiveAd(_ bannerView: BannerView) {
+            onHeightChange(bannerView.adSize.size.height)
+        }
+
         func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
             #if DEBUG
             print("Banner ad failed to load: \(error.localizedDescription)")
