@@ -34,6 +34,25 @@ struct QuizView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                if !session.isComplete, session.currentQuestion != nil {
+                    Label(session.progressText, systemImage: "chart.bar.fill")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(BeerTheme.malt)
+                }
+            }
+            ToolbarItem(placement: .principal) {
+                if !session.isComplete, session.currentQuestion != nil {
+                    HStack(spacing: 8) {
+                        ProgressView(value: Double(session.currentIndex + 1), total: Double(session.questions.count))
+                            .tint(BeerTheme.deepAmber)
+                            .frame(width: 80)
+                        Label("\(timeRemaining)", systemImage: "timer")
+                            .font(.caption.monospacedDigit().weight(.bold))
+                            .foregroundStyle(timeRemaining <= 5 ? BeerTheme.berry : BeerTheme.hop)
+                    }
+                }
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Text("Score \(session.score)")
                     .font(.subheadline.weight(.bold))
@@ -56,8 +75,6 @@ struct QuizView: View {
     private func questionBody(_ question: QuizQuestion) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                statusBar
-
                 BeerPanel {
                     VStack(alignment: .leading, spacing: 14) {
                         BeerChip(title: question.difficulty.localizedName, color: difficultyColor(question.difficulty))
