@@ -19,7 +19,7 @@ struct AdBannerBar: View {
             Spacer(minLength: 0)
             BannerViewContainer(adSize: adSize)
                 .frame(width: adSize.size.width, height: adSize.size.height)
-                .clipped()
+
                 .accessibilityIdentifier("quiz_banner_ad")
             Spacer(minLength: 0)
         }
