@@ -5,11 +5,17 @@ private enum AppRoute: Hashable {
 }
 
 struct ContentView: View {
+    @State private var showSplash = true
     @State private var questions: [QuizQuestion] = []
     @State private var loadError: String?
     @State private var path: [AppRoute] = []
 
     var body: some View {
+        if showSplash {
+            SplashView(onFinish: {
+                withAnimation(.easeOut(duration: 0.5)) { showSplash = false }
+            })
+        } else {
         NavigationStack(path: $path) {
             Group {
                 if let loadError {
@@ -32,6 +38,7 @@ struct ContentView: View {
             .task {
                 loadQuestionsIfNeeded()
             }
+        }
         }
     }
 
