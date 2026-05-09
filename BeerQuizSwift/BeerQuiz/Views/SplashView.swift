@@ -28,7 +28,7 @@ struct SplashView: View {
                 }
                 .ignoresSafeArea()
 
-                ForEach(0..<18, id: \.self) { i in
+                ForEach(0..<30, id: \.self) { i in
                     RisingBubble(screenWidth: geo.size.width, screenHeight: geo.size.height, index: i)
                 }
 
@@ -66,7 +66,7 @@ private struct RisingBubble: View {
     @State private var opacity: CGFloat = 0
 
     private var xPos: CGFloat { CGFloat(index % 9) / 9.0 * screenWidth + screenWidth / 18 + CGFloat(index / 9) * 22 }
-    private var size: CGFloat { [5.0, 7.0, 4.0, 8.0, 6.0, 5.0, 9.0, 4.0, 7.0][index % 9] }
+    private var size: CGFloat { [6.0, 9.0, 5.0, 11.0, 8.0, 6.0, 12.0, 5.0, 9.0][index % 9] }
     private var delay: Double { Double(index) * 0.07 + 0.1 }
     private var duration: Double { [1.0, 1.2, 0.9, 1.3, 1.1][index % 5] }
 
@@ -87,17 +87,31 @@ private struct RisingBubble: View {
 }
 
 private struct FoamView: View {
-    private let sizes: [CGFloat] = [38, 30, 44, 32, 42, 28, 40, 34, 44, 30, 38, 42]
+    private let row1: [CGFloat] = [58, 46, 64, 38, 66, 52, 60, 44, 58, 40, 68, 50, 62, 42, 64, 54, 56, 48, 62, 44]
+    private let row2: [CGFloat] = [36, 44, 32, 48, 38, 46, 30, 50, 40, 36, 50, 34, 48, 36, 44, 38]
 
     var body: some View {
-        HStack(spacing: -10) {
-            ForEach(Array(sizes.enumerated()), id: \.offset) { _, size in
-                Circle()
-                    .fill(Color.white.opacity(0.88))
-                    .frame(width: size, height: size * 0.8)
-                    .offset(y: -size * 0.1)
+        ZStack(alignment: .top) {
+            HStack(spacing: -16) {
+                ForEach(Array(row1.enumerated()), id: \.offset) { _, size in
+                    Circle()
+                        .fill(Color.white.opacity(0.92))
+                        .frame(width: size, height: size * 0.82)
+                }
             }
+            .frame(maxWidth: .infinity)
+
+            HStack(spacing: -12) {
+                ForEach(Array(row2.enumerated()), id: \.offset) { _, size in
+                    Circle()
+                        .fill(Color.white.opacity(0.82))
+                        .frame(width: size, height: size * 0.78)
+                        .offset(y: -size * 0.45)
+                }
+            }
+            .frame(maxWidth: .infinity)
         }
-        .offset(y: 12)
+        .frame(maxWidth: .infinity)
+        .offset(y: 14)
     }
 }
