@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		083C594EEF0DE6AD63591D0F /* BeerQuiz.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BeerQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		083C594EEF0DE6AD63591D0F /* BeerQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146AEC841583F3B3897206F9 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		292BB6A61D810B0AFD7CC746 /* BeerQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerQuizApp.swift; sourceTree = "<group>"; };
 		36FF5FBABBEEEC7E87339D24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -235,7 +235,6 @@
 			packageReferences = (
 				D5B0B9D89431EB7F6F79F7A7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -379,6 +378,9 @@
 				PRODUCT_MODULE_NAME = BeerQuiz;
 				PRODUCT_NAME = BeerQuiz;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -398,6 +400,9 @@
 				PRODUCT_MODULE_NAME = BeerQuiz;
 				PRODUCT_NAME = BeerQuiz;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
