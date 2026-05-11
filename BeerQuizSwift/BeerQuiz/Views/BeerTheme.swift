@@ -15,10 +15,10 @@ struct BeerBackdrop: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    BeerTheme.foam,
-                    Color(red: 1.0, green: 0.88, blue: 0.54),
-                    Color(red: 1.0, green: 0.68, blue: 0.23),
-                    Color(red: 0.98, green: 0.76, blue: 0.36)
+                    Color(red: 0.99, green: 0.95, blue: 0.85),
+                    Color(red: 1.0, green: 0.92, blue: 0.68),
+                    Color(red: 0.99, green: 0.80, blue: 0.40),
+                    Color(red: 0.98, green: 0.78, blue: 0.38)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -26,13 +26,13 @@ struct BeerBackdrop: View {
 
             RadialGradient(
                 colors: [
-                    Color.white.opacity(0.78),
-                    Color.white.opacity(0.12),
+                    Color.white.opacity(0.72),
+                    Color.white.opacity(0.08),
                     Color.clear
                 ],
                 center: .topLeading,
                 startRadius: 30,
-                endRadius: 460
+                endRadius: 480
             )
 
             FloatingBeerIcons()

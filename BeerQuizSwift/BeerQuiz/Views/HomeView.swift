@@ -58,17 +58,17 @@ struct HomeView: View {
 
     private var stats: some View {
         BeerPanel {
-            VStack(alignment: .leading, spacing: 16) {
-                HStack(spacing: 12) {
-                    StatBadge(title: "問題数", value: "\(questionCount)問", symbol: "circle.grid.2x2.fill")
-                    StatBadge(title: "1回", value: "10問", symbol: "timer")
-                }
+            VStack(alignment: .leading, spacing: 14) {
+                Label("3つの難易度に挑戦", systemImage: "star.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(BeerTheme.hop)
 
                 HStack(spacing: 10) {
                     BeerChip(title: "初級", color: BeerTheme.skyFoam)
                     BeerChip(title: "中級", color: BeerTheme.amber)
                     BeerChip(title: "上級", color: BeerTheme.berry)
                 }
+                .padding(.top, 4)
             }
         }
     }
@@ -101,26 +101,7 @@ struct HomeView: View {
     }
 }
 
-private struct StatBadge: View {
-    let title: String
-    let value: String
-    let symbol: String
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Label(title, systemImage: symbol)
-                .font(.caption.weight(.bold))
-                .foregroundStyle(BeerTheme.hop)
-            Text(value)
-                .font(.system(size: 28, weight: .black, design: .rounded))
-                .foregroundStyle(BeerTheme.malt)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(Color.white.opacity(0.62), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-    }
-}
 
 #Preview {
-    HomeView(questionCount: 75, startQuiz: {})
+    HomeView(questionCount: 125, startQuiz: {})
 }
