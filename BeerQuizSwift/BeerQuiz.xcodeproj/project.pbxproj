@@ -20,8 +20,8 @@
 		A5B18D7D900326B16819C170 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */; };
 		AA149C0A4E52C60A2EAAE6A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F5B30889700A8C7E00513 /* ContentView.swift */; };
 		ACCB30D056825666E1CD4287 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6725E1069148873B9B65266 /* Difficulty.swift */; };
-		B6A9C25DD2F04E0792C81A01 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9C25DD2F04E0792C81A00 /* SplashView.swift */; };
 		B2804ADDDA08DE439A5B22EA /* beer_quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */; };
+		B6A9C25DD2F04E0792C81A01 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9C25DD2F04E0792C81A00 /* SplashView.swift */; };
 		E7F4CD52CF115A459487A38E /* BeerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F89C396CB442A1095F64D /* BeerTheme.swift */; };
 		EDC7C948ECBBE66DB4486873 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF5FBABBEEEC7E87339D24 /* HomeView.swift */; };
 		F2A834373BAC646BD4348AB7 /* QuestionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */; };
@@ -45,15 +45,15 @@
 		3B0C83C20EF599C2002B6BA0 /* AdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBannerView.swift; sourceTree = "<group>"; };
 		478152F0EE7F55DED9EC3EF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50E4F700FE328FC97A70F3CD /* QuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
-		6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BeerQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9C989E73435DE1A5B890DC /* BeerQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2F89C396CB442A1095F64D /* BeerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTheme.swift; sourceTree = "<group>"; };
 		77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		78A72FABF47FD0D6855CABAB /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepositoryTests.swift; sourceTree = "<group>"; };
 		8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRecord.swift; sourceTree = "<group>"; };
 		936F5B30889700A8C7E00513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B6A9C25DD2F04E0792C81A00 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beer_quiz.json; sourceTree = "<group>"; };
+		B6A9C25DD2F04E0792C81A00 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		C6725E1069148873B9B65266 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		CD4B217B6023F483F1D1742A /* UnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableView.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					3B19E046438E0F1A5B02EE37 = {
 						ProvisioningStyle = Automatic;
@@ -339,6 +339,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -360,6 +361,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -373,6 +375,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7R927F3U4V;
 				INFOPLIST_FILE = BeerQuiz/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +400,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7R927F3U4V;
 				INFOPLIST_FILE = BeerQuiz/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -492,6 +496,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -506,6 +511,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
