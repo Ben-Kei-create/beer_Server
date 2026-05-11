@@ -20,6 +20,7 @@
 		A5B18D7D900326B16819C170 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC63BAB4771BAC964C9A52 /* QuizQuestion.swift */; };
 		AA149C0A4E52C60A2EAAE6A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F5B30889700A8C7E00513 /* ContentView.swift */; };
 		ACCB30D056825666E1CD4287 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6725E1069148873B9B65266 /* Difficulty.swift */; };
+		B6A9C25DD2F04E0792C81A01 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A9C25DD2F04E0792C81A00 /* SplashView.swift */; };
 		B2804ADDDA08DE439A5B22EA /* beer_quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */; };
 		E7F4CD52CF115A459487A38E /* BeerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2F89C396CB442A1095F64D /* BeerTheme.swift */; };
 		EDC7C948ECBBE66DB4486873 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF5FBABBEEEC7E87339D24 /* HomeView.swift */; };
@@ -51,6 +52,7 @@
 		79D7BB98479904CC942AFDB7 /* QuestionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepositoryTests.swift; sourceTree = "<group>"; };
 		8431DBC90A7CDF2B0CE49304 /* AnswerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRecord.swift; sourceTree = "<group>"; };
 		936F5B30889700A8C7E00513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B6A9C25DD2F04E0792C81A00 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B2AFFCBC5E044DFD3F10BF33 /* beer_quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beer_quiz.json; sourceTree = "<group>"; };
 		C47DB9D71C3F6983CA1E6385 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		C6725E1069148873B9B65266 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				36FF5FBABBEEEC7E87339D24 /* HomeView.swift */,
 				146AEC841583F3B3897206F9 /* QuizView.swift */,
 				78A72FABF47FD0D6855CABAB /* ResultView.swift */,
+				B6A9C25DD2F04E0792C81A00 /* SplashView.swift */,
 				CD4B217B6023F483F1D1742A /* UnavailableView.swift */,
 			);
 			name = Views;
@@ -213,7 +216,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					3B19E046438E0F1A5B02EE37 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					6794C8D91634845ED53B9A2F = {
@@ -273,6 +275,7 @@
 				751900CDFD41C0995AEF66B0 /* QuizSession.swift in Sources */,
 				1D45215EF4A6058F5E456AFF /* QuizView.swift in Sources */,
 				8FCE0B8E24439B4EB357D7BE /* ResultView.swift in Sources */,
+				B6A9C25DD2F04E0792C81A01 /* SplashView.swift in Sources */,
 				25EC76C1B52188A173F11BD3 /* UnavailableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7R927F3U4V;
 				INFOPLIST_FILE = BeerQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7R927F3U4V;
 				INFOPLIST_FILE = BeerQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
